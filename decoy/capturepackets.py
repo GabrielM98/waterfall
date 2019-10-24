@@ -135,6 +135,7 @@ def print_and_accept(pkt):
 
                         pkt.set_payload(str(w))
     except:
+        print("Padsize {}".format(padsize))
         traceback.print_exc(file=sys.stderr)
 
     pkt.accept()

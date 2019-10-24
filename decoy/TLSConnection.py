@@ -293,7 +293,7 @@ class TLSConnection:
             # PREMASTER KEY
             ec_curve = ec_reg.get_curve('secp256r1')
             server_keypair = ec.Keypair(ec_curve, pub= str_to_ec_point(self.serverpub,ec_curve))
-            client_keypair=pickle.load(open('clientpriv'))
+            client_keypair=pickle.load(open('/home/gabriel/waterfall/decoy/scapy_ssl_tls/clientpriv'))
             secret_point = ec.ECDH(client_keypair).get_secret(server_keypair)
             mk = int_to_str(secret_point.x) # masalan premaster key
 
